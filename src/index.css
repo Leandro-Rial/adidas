@@ -1,13 +1,882 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Open Sans', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #f6f6f7;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 10px;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++ */
+                /* NAVBAR */
+/* +++++++++++++++++++++++++++++++++++++++++ */
+
+.App {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10%;
+  background: #fff;
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(224,215,224,1);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(224,215,224,1);
+  box-shadow: 0px 5px 5px 0px rgba(224,215,224,1);
+  z-index: 1;
+}
+
+.logo {
+  max-width: 135px;
+}
+
+.App .nav ul, .nav-right {
+  list-style: none;
+  display: flex;
+}
+
+.App .nav-right ul {
+  list-style: none;
+  display: flex;
+}
+
+.App .nav ul li, .nav-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.App .nav ul li .link, .nav-right {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #000;
+  padding: 10px 0;
+}
+
+.App .nav ul li .link:hover {
+  border-bottom: 4px solid #54db8c;
+}
+
+.App .nav-right .User, .Settings, .Kart {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+.App .nav-right .User:hover {
+  color: lightcoral;
+}
+
+.App .nav-right .Settings:hover {
+  color: grey;
+}
+
+.App .nav-right .Kart:hover {
+  color: darkblue;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++ */
+              /* NUEVO */
+/* +++++++++++++++++++++++++++++++++++++++++ */
+
+.nav-right-nuevo {
+  position: relative;
+  display: flex;
+}
+
+.SignIn {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+.SignIn:hover {
+  color: #2ddfdf;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++ */
+              /* SIGNIN */
+/* +++++++++++++++++++++++++++++++++++++++++ */
+
+.signin {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 950px;
+  margin: 20px;
+  padding: 40px;
+  background: #f6f6f7;
+  border: none;
+}
+
+.signin-background img {
+  width: 480px;
+  height: 100%;
+}
+
+.signin-form {
+  width: 900px;
+  background: #fff;
+}
+
+form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 45px;
+}
+
+form .titulo-signin {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+
+form label {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #dadada;
+  padding: 10px 0;
+}
+
+form input[type = text], input[type = password], input[type = email] {
+  border: none;
+  background: #e7e3f1;
+  margin: 20px 0 30px 0;
+  padding: 10px;
+  transition: 0.5s;
+}
+
+form input[type = text]:hover, input[type = password]:hover, input[type = email]:hover {
+  background: #b8a9f3;
+}
+
+form input[type = text]:focus, input[type = password]:focus, input[type = email]:focus {
+  background: #ffffff;
+}
+
+.registrarse {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.registrarse h5 {
+  margin-left: 2px;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++ */
+              /* PRODUCTO PRINCIPAL */
+/* +++++++++++++++++++++++++++++++++++++++++ */
+
+.producto-principal {
+  background-image: url('../src/img/background-zapas.jpg');
+  background-size: cover;
+  width: 100%;
+  min-height: 80vh;
+}
+
+.titulo-background {
+  font-family: 'Teko', sans-serif;
+  font-size: 10rem;
+  text-transform: uppercase;
+}
+
+.background-content {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 50%;
+  top: 12em;
+  line-height: 3.5em;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.background-content .texto {
+  font-size: 2rem;
+  padding: 0 4.5em;
+}
+
+.button-background {
+	box-shadow: 7px 3px 0px 2px #ffffff;
+	background-color:#ffffff;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	font-style:italic;
+	padding:5px 22px;
+  text-decoration:none;
+  transition: 0.5s;
+}
+.button-background:hover {
+  background-color:#ffffff;
+  box-shadow: 10px 5px 16px 2px #c6c9c5;
+  transition: 0.5s;
+}
+.button-background:active {
+	position:relative;
+  top:1px;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++ */
+            /* OFERTAS DEL DIA */
+/* +++++++++++++++++++++++++++++++++++++++++ */
+
+.offer {
+  background: #91aff5;
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  line-height: 2.5em;
+  padding: 35px 0;
+  color: #fff;
+}
+
+.offer .titulo-offer {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.offer .texto-offer {
+  font-size: 1.5rem;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++ */
+            /* lISTA DE PRODUCTOS */
+/* +++++++++++++++++++++++++++++++++++++++++ */
+
+.producto-list {
+  position: relative;
+  display: flex;
+}
+
+.productos-list {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  padding: 2em 0;
+}
+
+.products {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px 12px;
+  padding: 5px 80px;
+  background: #e5e5e9;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.products .Shoe {
+  max-width: 150px;
+  transform: rotate(15deg);
+  transition: 0.5s;
+}
+
+.products .Shoe:hover {
+  transform: rotate(0);
+  transition: 0.5s;
+}
+
+.products .card-title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-family: 'Teko', sans-serif;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++ */
+                /* LINK A FUTBOL */
+/* +++++++++++++++++++++++++++++++++++++++++ */
+
+.futbol-link {
+  position: relative;
+  display: flex;
+  margin: 20px 15px;
+}
+
+.futbol-link-1, .futbol-link-2 {
+  background-image: url('../src/img/futbol.jpg');
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 70vh;
+  margin: 0 10px;
+}
+
+.titulo-futbol {
+  font-family: 'Teko', sans-serif;
+  font-size: 6rem;
+  text-transform: uppercase;
+}
+
+.futbol-contenido {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+  line-height: 1.5em;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #fff;
+}
+
+.futbol-contenido .texto {
+  font-size: 1.3rem;
+  padding: 0 4.5em;
+}
+
+.button-background {
+	box-shadow: 7px 3px 0px 2px #ffffff;
+	background-color:#ffffff;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	font-style:italic;
+	padding:5px 22px;
+  text-decoration:none;
+  transition: 0.5s;
+}
+.button-background:hover {
+  background-color:#ffffff;
+  box-shadow: 10px 5px 16px 2px #c6c9c5;
+  transition: 0.5s;
+}
+.button-background:active {
+	position:relative;
+  top:1px;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++ */
+                /* FOOTER */
+/* +++++++++++++++++++++++++++++++++++++++++ */
+
+footer {
+  background: #e7e6e6;
+  padding: 2em;
+}
+
+footer .footer-titulo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++ */
+                /* PRODUCTO DETALLE */
+/* +++++++++++++++++++++++++++++++++++++++++ */
+
+.detalle {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 860px;
+  margin: 20px;
+  padding: 40px;
+  background: #f6f6f7;
+  border: none;
+}
+
+.producto-background {
+  position: relative;
+  width: 50%;
+  height: 475px;
+  transition: 0.5s;
+  box-shadow: -15px 0 35px rgba(185, 185, 185, 0.1),
+  0 -15px 35px rgba(185, 185, 185, 0.1),
+  0 15px 35px rgba(185, 185, 185, 0.1);
+  background: #fff;
+}
+
+.producto-background:hover {
+  transition: 0.5s;
+  transform: scale(1.05);
+}
+
+.logo-detalle {
+  position: absolute;
+  width: 150px;
+  left: 10px;
+  top: 0px;
+}
+
+.compartir-detalle {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: #000;
+  transition: 0.5s;
+}
+
+.compartir-detalle:hover {
+  transform: scale(1.1);
+}
+
+.titulo-producto-background {
+  position: absolute;
+  top: 100px;
+  left: 35px;
+  font-size: 9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: .9;
+  opacity: .1;
+  letter-spacing: 2px;
+  color: #000000;
+}
+
+.shoe-detalle {
+  position: relative;
+  top: 100px;
+  left: 15px;
+  width: 105%;
+  transform: rotate(20deg);
+}
+
+.info-detalle {
+  width: 50%;
+  background: #ffffff;
+  margin-top: 40px;
+  padding: 35px 40px;
+}
+
+.shoeName {
+  padding: 0 0 10px 0;
+}
+
+.shoeName .big {
+  font-size: 6rem;
+  font-family: 'Teko', sans-serif;
+}
+
+.shoeName .small {
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: #c6c9c5;
+}
+
+.shoeName, .descripcion-detalle, .color-detalle, .talle-detalle {
+  border-bottom: 1px solid #dadada;
+  padding: 1em;
+}
+
+.titulo-detalle, .titulo-color, .titulo-talle {
+  font-size: 1.8rem;
+}
+
+.color-detalle {
+  padding: 10px 0;
+}
+
+.colores-detalle {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.color {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.color[color="blue"]{
+  background: #2075f5;
+}
+
+.color[color="red"]{
+  background: #f84848;
+}
+
+.color[color="green"]{
+  background: #29b864;
+}
+
+.color[color="orange"]{
+  background: #ff5521;
+}
+
+.color[color="black"]{
+  background: #444;
+}
+
+.talle-detalle {
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.talles {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.talle {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  background: #eee;
+  margin: 0 10px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.buy-price-detalle {
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-detalle {
+  display: flex;
+  align-items: flex-start;
+}
+
+.price-detalle h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.price-detalle i {
+  font-size: 1.8rem;
+  margin-right: 1px;
+}
+
+.Kart-detalle {
+  padding: .5rem 1rem;
+  background: #f6f6f6;
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  transition: 0.5s;
+}
+
+.Kart-detalle:hover {
+  text-decoration: none;
+  color: #000;
+  box-shadow: 10px 5px 16px 2px #c6c9c5;
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+
+.Kart-detalle i {
+  margin-right: 10px;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++ */
+                /* PRODUCTOS VENTAS */
+/* +++++++++++++++++++++++++++++++++++++++++ */
+
+.producto-ventas {
+  position: relative;
+  margin: 0 40px;
+}
+
+.titulo-ventas {
+  position: relative;
+  margin: 50px 0 20px 0;
+}
+
+.titulo-ventas h1 {
+  font-size: 6rem;
+  letter-spacing: 2px;
+  font-family: 'Teko', sans-serif;
+}
+
+.contenido-ventas {
+  position: relative;
+  display: flex;
+  margin: 20px 0;
+}
+
+.caja-ventas {
+  width: 350px;
+  margin: 5px;
+}
+
+.caja-ventas:hover {
+  border: 1px solid #000;
+}
+
+.caja-ventas .background-ventas img {
+  width: 100%;
+}
+
+.caja-ventas .background-ventas i {
+  right: 15px;
+  top: 15px;
+  position: absolute;
+}
+
+.info-ventas {
+  padding: 20px 10px;
+}
+
+.info-ventas h3{
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.info-ventas h1 {
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  padding: 5px 0;
+}
+
+.info-ventas h2 {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+
+.ofertas-ventas {
+  background: #fff;
+  border: 1px solid #000;
+  margin: 15px 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px 0;
+}
+
+.ofertas-ventas h1 {
+  font-size: 4rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Open Sans Condensed', sans-serif;
+  padding: 5px 0;
+}
+
+.ofertas-ventas p {
+  font-size: 2rem;
+  font-family: 'Open Sans Condensed', sans-serif;
+  padding: 5px 0;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++ */
+        /* PRODUCTO PRINCIPAL FUTBOL */
+/* +++++++++++++++++++++++++++++++++++++++++ */
+
+.producto-principal-futbol {
+  background-image: url('../src/img/background.jpg');
+  background-size: cover;
+  width: 100%;
+  min-height: 80vh;
+}
+
+.background-content-futbol {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 50%;
+  top: 12em;
+  line-height: 3.5em;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #fff;
+}
+
+.titulo-background-futbol {
+  font-family: 'Teko', sans-serif;
+  font-size: 10rem;
+  text-transform: uppercase;
+}
+
+.background-content-futbol .texto-futbol {
+  font-size: 2rem;
+  padding: 0 4.5em;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++ */
+        /* PRODUCTOS FUTBOL */
+/* +++++++++++++++++++++++++++++++++++++++++ */
+
+.calcio {
+  position: relative;
+  margin: 0 40px;
+}
+
+.calcio .calcio-presentacion h1 {
+  font-size: 8rem;
+  text-transform: uppercase;
+  font-family: 'Teko', sans-serif;
+  margin-top: 0.6em;
+}
+
+.calcio .calcio-productos {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 60px 0;
+}
+
+.calcio .calcio-botines {
+  background-image: url('../src/img/botines.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 80vh;
+  margin: 0 20px;
+}
+
+.calcio .calcio-camisetas {
+  background-image: url('../src/img/real-madrid.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 80vh;
+  margin: 0 20px;
+}
+
+.calcio .calcio-uniforme {
+  background-image: url('../src/img/dybala.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 80vh;
+  margin: 0 20px;
+}
+
+.calcio .calcio-accesorios {
+  background-image: url('../src/img/botines.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 80vh;
+  margin: 0 20px;
+}
+
+.calcio-contenido {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+  line-height: 1.5em;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #fff;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++ */
+        /* PRODUCTOS FUTBOL */
+/* +++++++++++++++++++++++++++++++++++++++++ */
+
+.contacto {
+  position: relative;
+  margin: 20px;
+}
+
+.contacto-pag {
+  position: relative;
+  display: flex;
+}
+
+.titulo-contacto h1 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-size: 8rem;
+  text-transform: uppercase;
+  font-family: 'Teko', sans-serif;
+  margin-bottom: 1em;
+}
+
+.contacto-form {
+  position: relative;
+  width: 50%;
+  flex-direction: column;
+}
+
+.contacto-form form {
+  padding: 20px 20px;
+}
+
+.contacto-adidas {
+  width: 50%;
+  display: flex;
+  position: relative;
+}
+
+.contacto-adidas .adidas-contacto {
+  background: #eae1f8;
+  width: 100%;
 }
